@@ -3,9 +3,9 @@ package com.danielsiwiec.sort;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuickSort {
+public class QuickSort implements SortStrategy {
 
-	public static List<Integer> sort(List<Integer> list) {
+	public List<Integer> sort(List<Integer> list) {
 		if (list == null || list.size() < 2){
 			return list;
 		}

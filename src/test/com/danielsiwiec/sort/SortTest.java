@@ -1,21 +1,23 @@
 package com.danielsiwiec.sort;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import org.junit.Test;
 
-import com.danielsiwiec.sort.QuickSort;
+public class SortTest {
 
-public class QuickSortTest {
+	private SortStrategy strategy = new MergeSort();
+	private Sorter sorter = new Sorter();
 
 	@Test
 	public void simpleTest() {
 		Integer[] array = {3,2,1};
-		List<Integer> sorted = QuickSort.sort(Arrays.asList(array));
+		List<Integer> sorted = sorter.sort(Arrays.asList(array), strategy);
 		assertNotNull(sorted);
 		assertEquals(3,sorted.size());
 		assertEquals(1,(int)sorted.get(0));
@@ -25,13 +27,13 @@ public class QuickSortTest {
 	
 	@Test
 	public void acceptsNullList(){
-		List<Integer> sorted = QuickSort.sort(null);
+		List<Integer> sorted = sorter.sort(null, strategy);
 		assertNull(sorted);
 	}
 	
 	@Test
 	public void acceptsEmptyList(){
-		List<Integer> sorted = QuickSort.sort(new ArrayList<Integer>());
+		List<Integer> sorted = sorter.sort(new ArrayList<Integer>(), strategy);
 		assertNotNull(sorted);
 		assertEquals(0,sorted.size());
 	}
@@ -39,7 +41,8 @@ public class QuickSortTest {
 	@Test
 	public void sorts(){
 		Integer[] array = {2,1,9,3,4,8,0,5,10,6};
-		List<Integer> sorted = QuickSort.sort(Arrays.asList(array));
+		Sorter sorter = new Sorter();
+		List<Integer> sorted = sorter.sort(Arrays.asList(array), strategy);
 		assertNotNull(sorted);
 		assertEquals(10,sorted.size());
 		assertEquals(0,(int)sorted.get(0));
