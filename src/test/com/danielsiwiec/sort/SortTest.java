@@ -9,6 +9,10 @@ import java.util.List;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.danielsiwiec.sort.strategies.MergeSortStrategy;
+import com.danielsiwiec.sort.strategies.QuickSortStrategy;
+import com.danielsiwiec.sort.strategies.SortStrategy;
+
 @Test
 public class SortTest {
 
@@ -60,8 +64,8 @@ public class SortTest {
 	@DataProvider(name="strategies")
 	public Object[][] strategyProvider(){
 		return new Object[][]{
-				{new MergeSort()},
-				{new QuickSort()}
+				{new MergeSortStrategy()},
+				{new QuickSortStrategy()}
 		};
 	}
 
