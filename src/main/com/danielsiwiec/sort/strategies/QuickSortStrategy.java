@@ -1,9 +1,10 @@
-package com.danielsiwiec.sort;
+package com.danielsiwiec.sort.strategies;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuickSort implements SortStrategy {
+
+public class QuickSortStrategy implements SortStrategy {
 
 	public List<Integer> sort(List<Integer> list) {
 		if (list == null || list.size() < 2){

@@ -1,4 +1,4 @@
-package com.danielsiwiec.sort;
+package com.danielsiwiec.sort.strategies;
 
 import java.util.List;
 

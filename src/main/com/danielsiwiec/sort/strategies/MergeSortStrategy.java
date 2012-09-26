@@ -1,9 +1,10 @@
-package com.danielsiwiec.sort;
+package com.danielsiwiec.sort.strategies;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MergeSort implements SortStrategy {
+
+public class MergeSortStrategy implements SortStrategy {
 
 	public List<Integer> sort(List<Integer> integers) {
 		if (integers == null || integers.size() < 2) {
