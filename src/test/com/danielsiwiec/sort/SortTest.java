@@ -9,6 +9,7 @@ import java.util.List;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.danielsiwiec.sort.strategies.BubbleSortStrategy;
 import com.danielsiwiec.sort.strategies.MergeSortStrategy;
 import com.danielsiwiec.sort.strategies.QuickSortStrategy;
 import com.danielsiwiec.sort.strategies.SortStrategy;
@@ -65,7 +66,8 @@ public class SortTest {
 	public Object[][] strategyProvider(){
 		return new Object[][]{
 				{new MergeSortStrategy()},
-				{new QuickSortStrategy()}
+				{new QuickSortStrategy()},
+				{new BubbleSortStrategy()}
 		};
 	}
 
