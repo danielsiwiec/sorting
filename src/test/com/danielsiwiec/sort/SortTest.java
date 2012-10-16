@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import com.danielsiwiec.sort.strategies.BubbleSortStrategy;
 import com.danielsiwiec.sort.strategies.MergeSortStrategy;
 import com.danielsiwiec.sort.strategies.QuickSortStrategy;
+import com.danielsiwiec.sort.strategies.SelectionSort;
 import com.danielsiwiec.sort.strategies.SortStrategy;
 
 @Test
@@ -67,7 +68,8 @@ public class SortTest {
 		return new Object[][]{
 				{new MergeSortStrategy()},
 				{new QuickSortStrategy()},
-				{new BubbleSortStrategy()}
+				{new BubbleSortStrategy()},
+				{new SelectionSort()}
 		};
 	}
 
