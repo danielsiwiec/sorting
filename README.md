@@ -8,3 +8,4 @@ Currently the following algorithms are available:
 2. Quick sort
 3. Bubble sort
 4. Selection sort
+5. Insertion sort
