@@ -10,6 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.danielsiwiec.sort.strategies.BubbleSortStrategy;
+import com.danielsiwiec.sort.strategies.InsertionSortStrategy;
 import com.danielsiwiec.sort.strategies.MergeSortStrategy;
 import com.danielsiwiec.sort.strategies.QuickSortStrategy;
 import com.danielsiwiec.sort.strategies.SelectionSort;
@@ -22,8 +23,7 @@ public class SortTest {
 	
 	@Test(dataProvider="strategies")
 	public void simpleTest(SortStrategy strategy) {
-		Integer[] array = {3,2,1};
-		List<Integer> sorted = sorter.sort(Arrays.asList(array), strategy);
+		List<Integer> sorted = sorter.sort(Arrays.asList(new Integer[] {3,2,1}), strategy);
 		assertNotNull(sorted);
 		assertEquals(3,sorted.size());
 		assertEquals(1,(int)sorted.get(0));
@@ -46,9 +46,8 @@ public class SortTest {
 	
 	@Test(dataProvider="strategies")
 	public void sorts(SortStrategy strategy){
-		Integer[] array = {2,1,9,3,4,8,0,5,10,6};
 		Sorter sorter = new Sorter();
-		List<Integer> sorted = sorter.sort(Arrays.asList(array), strategy);
+		List<Integer> sorted = sorter.sort(Arrays.asList(new Integer[] {2,1,9,3,4,8,0,5,10,6}), strategy);
 		assertNotNull(sorted);
 		assertEquals(10,sorted.size());
 		assertEquals(0,(int)sorted.get(0));
@@ -69,7 +68,8 @@ public class SortTest {
 				{new MergeSortStrategy()},
 				{new QuickSortStrategy()},
 				{new BubbleSortStrategy()},
-				{new SelectionSort()}
+				{new SelectionSort()},
+				{new InsertionSortStrategy()}
 		};
 	}
 
